@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en ">
+    <head>
+        <title>ICA - Batch Processes</title>
+        <link rel="stylesheet" href="data.css">
+    </head>
+    <body>
+        <div class="backg">
+            <div class="navbar">
+                <ul>
+                <li><a href="Service.html">Home</a></li>
+                <li><a href="#">Documentation</a></li>
+                <li><a href="./About Us/aboutus.html">About Us</a></li>
+                <li><a href="mailto:rathodrahul873@gmail.com">Reach Us</a></li>
+                </ul>
+            </div>
+        <h2 >Batch Processes Occured</h2>
+       <div class="container">
+           <div class="bpdiv">
+        <table  class="table-bp">
+            <thead>
+              <th>FileName</th>
+              <th>CreatedDate</th>
+              <th>BatchId</th>
+              <th>Status</th>
+              <th>Comment</th>
+            </tr>
+            </thead>
+            <tbody id="data">            
+            </tbody>
+            </table>
+        </div>
+       </div>
+        <script>
+fetch('http://127.0.0.1:3000/api/findallv')
+  .then(response => response.json())
+  .then(data => {
+      console.log(data);
+      
+      if(data.length>0){
+         var temp="";
+        data.forEach((u) => {
+        temp+="<tr>";
+       
+        temp+="<td>"+u.FileName+"</td>";
+        temp+="<td>"+u.CreatedDate+"</td>";
+        temp+="<td>"+u.BatchId+"</td>";
+        temp+="<td>"+u.Status+"</td>";
+        temp+="<td><a href='PancardDetails.html'>"+u.Comment+"</td></tr>";
+})
+document.getElementById("data").innerHTML=temp;
+}
+})
+       
+</script>
+    </div>
+    </body>
+</html>

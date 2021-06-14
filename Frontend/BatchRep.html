@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en ">
+    <head>
+        <title>ICA - Batch Reports</title>
+        <link rel="stylesheet" href="deb.css">
+    </head>
+    <body>
+        <div class="backg">
+            <div class="navbar">
+                <ul>
+                <li><a href="Service.html">Home</a></li>
+                <li><a href="#">Documentation</a></li>
+                <li><a href="./About Us/aboutus.html">About Us</a></li>
+                <li><a href="mailto:rathodrahul873@gmail.com">Reach Us</a></li>
+                </ul>
+             </div>
+        <h2>Batch Report Generated</h2>
+       <div class="container">
+        <table  class="table" >
+            <thead>
+              <tr>
+               
+              <th>Download Failed</th>
+              <th>Downloads Success</th>
+              <th>Extraction Failed</th>
+              <th>Extracted</th>
+              <th>Total Counts</th>
+              <th>Time Stamp</th>
+              <th>Batch Id </th></tr>
+            </thead>
+            <tbody id="data">
+            </tbody>
+            
+            </table>
+       </div>
+        <script>
+fetch('http://127.0.0.1:3000/api/findalls')
+  .then(response => response.json())
+  .then(data => {
+      console.log(data);
+      
+      if(data.length>0){
+         var temp="";
+        data.forEach((u) => {
+        temp+="<tr data-href='index.html'>";
+      
+        temp+="<td>"+u.DownloadFailed+"</td>";
+        temp+="<td>"+u.Downloads+"</td>";
+        temp+="<td>"+u.ExtractionFailed+"</td>";
+        temp+="<td>"+u.Extracted+"</td>";
+        temp+="<td>"+u.TotalCounts+"</td>";
+        temp+="<td>"+u.CreatedDate+"</td>";
+        
+        temp+="<td><a href='index.html'>"+u.BatchId+"</a>   </td>   </tr>";
+})
+
+document.getElementById("data").innerHTML=temp;
+} 
+})
+
+        </script>
+    </div>
+    </body>
+</html>
+
+

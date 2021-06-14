@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en ">
+    <head>
+        <title>ICA - Pancard Details </title>
+        <link rel="stylesheet" href="data.css">
+    </head>
+    <body">
+        <div class="backg">
+            <div class="navbar">
+                <ul>
+                <li><a href="Service.html">Home</a></li>
+                <li><a href="#">Documentation</a></li>
+                <li><a href="./About Us/aboutus.html">About Us</a></li>
+                <li><a href="mailto:rathodrahul873@gmail.com">Reach Us</a></li>
+                </ul>
+             </div>
+      <h2>Details of Pancard Holder</h2>
+
+       <div class="container">
+        <div class="pandiv">
+        <table  class="table-pan">
+            <thead>
+              <tr>
+              <th>Name </th>
+              <th>Father Name</th>
+              <th>DOB</th>
+              <th>Pancard No</th>
+             
+</tr>
+            </thead>
+            <tbody id="datx">
+            
+            </tbody>
+            
+            </table>
+        </div>
+       </div>
+        <script>
+fetch('http://127.0.0.1:3000/api/findall')
+  .then(response => response.json())
+  .then(data => {
+      console.log(data);
+      
+      if(data.length>0){
+         var temp="";
+        data.forEach((u) => {
+        temp+="<tr>";
+      
+        temp+="<td>"+u.name+"</td>";
+        temp+="<td>"+u.fatherName+"</td>";
+        temp+="<td>"+u.dob+"</td>";
+        temp+="<td>"+u.pancard+"</td>";
+       
+})
+document.getElementById("datx").innerHTML=temp;
+} 
+})
+      </script>
+    </body>
+</html>

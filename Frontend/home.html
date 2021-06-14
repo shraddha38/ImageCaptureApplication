@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        font-family: sans-serif;
+    }
+.banner{
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url(image1.jpg);
+    background-size: cover;
+    background-position: center;
+}
+.navbar{
+    
+    float: right;
+    margin: auto;
+    padding: 38px;
+    display: flex;
+    align-content: center;
+}
+.navbar ul li{
+    list-style: none;
+    display: inline-block;
+    margin: 0 15px;
+    position: relative;
+}
+.navbar ul li a{
+    text-decoration: none;
+    color: #fff;
+    text-transform: uppercase;
+
+}
+
+.navbar ul li ::after{
+    content: '';
+    height: 3px;
+    width: 0%;
+    background: #009688;
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    transition: 0.6s;
+}
+.navbar ul li:hover ::after
+{
+    width: 100%;
+}
+.content{
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+    color: white;
+}
+.content h1{
+    font-size: 60px;
+    margin-top: 80px;
+}
+.content p{
+    font-family: 'Karla', sans-serif;
+    margin: 20px auto;
+    font-weight: 100;
+    line-height: 25px;
+    font-size :20px;
+    color: rgb(212, 200, 200);
+    
+}
+button{
+    width: 200px;
+    padding: 15px 0;
+    text-align: center;
+    margin: 20px 10px;
+    border-radius: 25px;
+    font-weight: bold;
+    border: 2px solid #009688;
+    background: transparent;
+    color: white;
+    cursor: pointer;    
+    position: relative;
+    overflow: hidden;
+}
+
+button:hover span{
+    width: 100%;
+}
+button:hover{
+    border: none;
+}
+</style>
+</head>
+
+<body>
+    <div class="banner">
+         <div class="navbar">
+            <ul>
+            <li><a href="Service.html">Services</a></li>
+            <li><a href="https://azuremarketplace.microsoft.com/en-us/marketplace/consulting-services/xoriantcorporation.xoriant_smart_capture">Documentation</a></li>
+            <li><a href="./About Us/aboutus.html">About Us</a></li>
+            <li><a href="mailto:8770473516shraddha@gmail.com">Reach Us</a></li>
+            </ul>
+         </div>
+
+         <div class="content">
+             <h1>Image Capture Application</h1>
+             <p>Big Data holds the Answers</p>
+
+            <div>
+                <button type="button"><span></span><a href = http://localhost:3500>LOGIN</a></button>
+                <button type="button"><span></span> <a href="https://azuremarketplace.microsoft.com/en-us/marketplace/consulting-services/xoriantcorporation.xoriant_smart_capture">DOCUMENTATION</a></button>
+            </div>
+         </div>
+
+</div>
+</body>
+</html>
