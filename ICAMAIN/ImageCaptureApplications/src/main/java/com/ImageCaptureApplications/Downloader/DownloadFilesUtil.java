@@ -59,7 +59,7 @@ public class DownloadFilesUtil {
 			FileOutputStream outputStream = new FileOutputStream(saveFilePath);
 
 			int bytesRead = -1;
-			byte[] buffer = new byte[BUFFER_SIZE];
+			byte[] buffer = new byte[ BUFFER_SIZE];
 			double downloaded = 0.00;
 			int read=0;
 			double percentDownloaded = 0.00;
@@ -79,7 +79,7 @@ public class DownloadFilesUtil {
 		} 
 		
 		else {
-			System.out.println("No file to download. Server replied HTTP code: " + responseCode);
+			System.out.println(" No file to download. Server replied HTTP code: " + responseCode);
 		}
 		httpConn.disconnect();
 	}
