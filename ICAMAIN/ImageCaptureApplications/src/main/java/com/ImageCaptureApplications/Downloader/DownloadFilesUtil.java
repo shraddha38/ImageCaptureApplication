@@ -74,7 +74,6 @@ public class DownloadFilesUtil {
 
 			outputStream.close();
 			inputStream.close();
-
 			System.out.println("File downloaded"+"\n");
 		} 
 		
